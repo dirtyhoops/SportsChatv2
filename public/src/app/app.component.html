@@ -1,0 +1,49 @@
+<div class="header">
+    <div class="headericon">
+        <p>SportsChat</p>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="articlelistdiv">
+        <ul *ngFor="let x of articles[0].articles">
+            <li><a (click)="showarticle(x.url)">{{x.title}}</a></li>
+        </ul>
+    </div>
+    <div class="maincontentdiv" *ngIf="selectedArticle">
+        <iframe style="height: 100%; width: 100%" [src]="controllerSrc"></iframe>
+    </div>
+    <div class="chatdiv">
+        <div class="onlineuserdiv">
+            <div class="currentuserdiv">
+                <p>Online Users:</p>
+                <ul>
+                    <li>User1</li>
+                    <li>user 2</li>
+                </ul>
+            </div>
+           <div class="nicknamediv">
+
+           </div>
+        </div>
+        <div class="leftchatdiv">
+            <div class="chatmessagediv">
+                <div class="texts1">
+                    <ul id="messages"></ul>
+                </div>
+            </div>
+            <div class="chatformdiv">
+                <div class="row">
+                    <div class="col-10">
+                        <textarea class="form-control" id="textmessage" rows="1"></textarea>  
+                    </div>
+                    <div class="col-2">
+                        <button id="sendbutton" class="btn btn-dark btn-block">Send Message</button> 
+                    </div>
+                                
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+</div>
